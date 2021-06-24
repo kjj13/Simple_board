@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)  // Auditing 기능이 있어야 날짜 등이 알아서 생성이 된다.
 public class Board {
 
     @Id

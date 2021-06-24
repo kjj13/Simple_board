@@ -14,6 +14,11 @@ public class FileService {
     private final FileRepository fileRepository;
 
     @Transactional
+    public void delete(Long id){
+        fileRepository.deleteById(id);
+    }
+
+    @Transactional
     public Long saveFile(FileDto fileDto){
         return fileRepository.save(fileDto.toEntity()).getId();
     }
